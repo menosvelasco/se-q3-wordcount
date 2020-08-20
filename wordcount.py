@@ -25,15 +25,22 @@ should return a dictionary with words as keys, and their counts as values.
 
 # Your name, plus anyone who helped you with this assignment
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = """
+    Manuel Velasco
+ """
 
 import sys
 
 
 def create_word_dict(filename):
     """Returns a word/count dict for the given file."""
-    # Your code here
-    return
+    dict_count = dict()
+    with open(filename) as f:
+        for line in f:
+            words = line.split()
+            for word in words:
+                dict_count[word.lower()] = dict_count.get(word.lower(), 0) + 1
+    return dict_count
 
 
 def print_words(filename):
